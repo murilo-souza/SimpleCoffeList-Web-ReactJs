@@ -9,3 +9,9 @@ export const Container = styled.main`
 
   margin: auto;
 `
+
+export const SpinnerContainer = styled.main`
+  display: flex;
+
+  justify-content: center;
+`
