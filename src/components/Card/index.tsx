@@ -10,6 +10,7 @@ import StarFill from '../../assets/Star_fill.svg'
 import StarEmpty from '../../assets/Star.svg'
 
 interface CoffeeCardProps {
+  id: number
   name: string
   image: string
   price: string
@@ -19,30 +20,26 @@ interface CoffeeCardProps {
   available: boolean
 }
 
-export function Card({
-  name,
-  image,
-  price,
-  rating,
-  votes,
-  popular,
-  available,
-}: CoffeeCardProps) {
+interface CoffeeData {
+  coffee: CoffeeCardProps
+}
+
+export function Card({ coffee }: CoffeeData) {
   return (
     <Container>
-      <CoffeeImg src={image} />
-      {popular && <Popular>Popular</Popular>}
+      <CoffeeImg src={coffee.image} />
+      {coffee.popular && <Popular>Popular</Popular>}
       <Content>
-        <p>{name}</p>
-        <span>{price}</span>
+        <p>{coffee.name}</p>
+        <span>{coffee.price}</span>
       </Content>
       <Footer>
         <Rating>
-          {rating ? (
+          {coffee.rating ? (
             <>
               <img src={StarFill} alt="Estrela" width="25" height="25" />
               <p>
-                {rating} <span>({votes} votes)</span>
+                {coffee.rating} <span>({coffee.votes} votes)</span>
               </p>
             </>
           ) : (
@@ -54,7 +51,7 @@ export function Card({
             </>
           )}
         </Rating>
-        {!available && <span>Sold out</span>}
+        {!coffee.available && <span>Sold out</span>}
       </Footer>
     </Container>
   )

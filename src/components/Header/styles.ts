@@ -36,6 +36,8 @@ export const NavContainer = styled.nav`
 
   margin-top: 1.5rem;
 
+  margin-bottom: 2.5rem;
+
   a {
     text-decoration: none;
 
