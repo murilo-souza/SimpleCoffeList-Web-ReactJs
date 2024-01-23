@@ -8,4 +8,8 @@ export const Container = styled.main`
   grid-gap: 2.5rem 1rem;
 
   margin: auto;
+
+  @media (max-width: 768px) {
+    grid-template-columns: auto;
+  }
 `

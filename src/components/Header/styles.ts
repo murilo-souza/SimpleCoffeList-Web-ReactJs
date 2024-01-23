@@ -6,6 +6,10 @@ export const Container = styled.header`
 
   align-items: center;
   justify-content: center;
+
+  margin-top: 3rem;
+
+  z-index: 1;
 `
 
 export const Title = styled.h1`
@@ -15,10 +19,10 @@ export const Title = styled.h1`
 `
 
 export const Description = styled.span`
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 400;
 
-  max-width: 27rem;
+  max-width: 30rem;
 
   text-align: center;
 
@@ -57,5 +61,16 @@ export const NavContainer = styled.nav`
 
       background: ${(props) => props.theme.gray300};
     }
+  }
+`
+
+export const ImageVector = styled.img`
+  right: 31.5%;
+  top: 12.6rem;
+
+  position: absolute;
+
+  @media (max-width: 1068px) {
+    display: none;
   }
 `
